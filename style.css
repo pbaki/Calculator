@@ -16,17 +16,21 @@ body {
     align-items: flex-start;
     justify-content: center;
 }
-.screen-container {
+.screens-container {
     background-color: bisque;
     display: flex;
+    flex-direction: column;
     align-items: flex-end;
-    justify-content: flex-end;
+    justify-content: space-between;
     bottom: 30px;
     width: 100%;
     height: 20%;
 }
-.screen {
-    padding: 14px 20px;
+.upscreen-container{
+    padding: 3px 6px;
+}
+.screen-container{
+    padding: 3px 6px;
 }
 .button-container {
     display: flex;
