@@ -10,16 +10,15 @@ function multiplyNumber(number1, number2){
 function divideNumber(number1, number2){
     return number1 / number2;
 }
-
 function operate(operator, number1, number2){
     if (operator == "+"){
-        return addNumber(number1, number2);
+        return addNumber(number1, number2).toFixed(2);
     } else if (operator == "-"){
-        return subtractNumber(number1, number2);
+        return subtractNumber(number1, number2).toFixed(2);
     } else if (operator == "*"){
-        return multiplyNumber(number1, number2);
+        return multiplyNumber(number1, number2).toFixed(2);
     } else if (operator == "/"){
-        return divideNumber(number1, number2);
+        return divideNumber(number1, number2).toFixed(2);
     }
 
 }
