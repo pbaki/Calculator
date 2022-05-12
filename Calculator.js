@@ -50,20 +50,21 @@ function showOnDisplay(){
     number9.addEventListener("click", add9 = () => {screen.innerHTML += "9", store += "9"});
     let number0 = document.getElementById("number-0");
     number0.addEventListener("click", add0 = () => {screen.innerHTML += "0", store += "0"});
-
+    let clearAll = document.getElementById("clear-all");
+    clearAll.addEventListener("click", clear = () => {screen.innerHTML = "", store = "", upscreen.innerHTML = "", operation = ""});
+   
     let add = document.getElementById("add");
-    add.addEventListener("click", addadd = () => {screen.innerHTML = "", upscreen.innerHTML = store + "+", operation += "+"});
+    add.addEventListener("click", addadd = () => {upscreen.innerHTML == "" ? upscreen.innerHTML = screen.innerHTML + "+" : upscreen.innerHTML = operate(operation.split("").pop(), parseInt(upscreen.innerHTML), parseInt(screen.innerHTML)) + "+" ,screen.innerHTML = "",  operation += "+"});
     let subtract = document.getElementById("subtract");
-    subtract.addEventListener("click", addsub = () => {screen.innerHTML = "", upscreen.innerHTML = store + "-", operation += "-"});
+    subtract.addEventListener("click", addsub = () => {upscreen.innerHTML == "" ? upscreen.innerHTML = screen.innerHTML + "-" : upscreen.innerHTML = operate(operation.split("").pop(), parseInt(upscreen.innerHTML), parseInt(screen.innerHTML)) + "-",  screen.innerHTML = "", operation += "-"});
     let multiply = document.getElementById("multiply");
-    multiply.addEventListener("click", addmul = () => {screen.innerHTML = "", upscreen.innerHTML = store + "*", operation += "*"});
+    multiply.addEventListener("click", addmul = () => {upscreen.innerHTML == "" ? upscreen.innerHTML = screen.innerHTML + "*" : upscreen.innerHTML = operate(operation.split("").pop(), parseInt(upscreen.innerHTML), parseInt(screen.innerHTML)) + "*" , screen.innerHTML = "", operation += "*"});
     let divide = document.getElementById("divide");
-    divide.addEventListener("click", adddiv = () => {screen.innerHTML = "", upscreen.innerHTML = store + "/", operation += "/"});
+    divide.addEventListener("click", adddiv = () => {upscreen.innerHTML == "" ? upscreen.innerHTML = screen.innerHTML + "/" : upscreen.innerHTML = operate(operation.split("").pop(), parseInt(upscreen.innerHTML), parseInt(screen.innerHTML)) + "/" , screen.innerHTML = "", operation += "/"});
 
 
     let equal = document.getElementById("equal");
     equal.addEventListener("click", solution = () => 
-    {screen.innerHTML = operate(operation, parseInt(upscreen.innerHTML), parseInt(screen.innerHTML)), store = "", operation = "", upscreen.innerHTML = ""});
+    {screen.innerHTML = operate(operation.split("").pop(), parseInt(upscreen.innerHTML), parseInt(screen.innerHTML)), store = screen.innerHTML, operation = "", upscreen.innerHTML = ""});
 }
-
 showOnDisplay()
