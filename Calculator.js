@@ -18,7 +18,13 @@ function operate(operator, number1, number2){
     } else if (operator == "*"){
         return multiplyNumber(number1, number2).toFixed(2);
     } else if (operator == "/"){
-        return divideNumber(number1, number2).toFixed(2);
+        if (number2 == 0){
+            return "Error, can't divide by 0"
+        } else {
+            return divideNumber(number1, number2).toFixed(2);
+        }
+    } else {
+        return "Error, reset and enter some numbers";
     }
 
 }
